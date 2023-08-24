@@ -1,6 +1,6 @@
 import java.util.*;
 
-public ejercicio1 Main {
+public ejercicio2 Main {
     public static void main(String[] args) {
       int num1;
       int[] list = new int[7];
