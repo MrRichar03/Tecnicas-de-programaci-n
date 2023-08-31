@@ -45,7 +45,7 @@ public class Taller2Pre {
 									  String direccion,
 									  String nivelAcademico,
 									  String ocupacion,
-									  Character Genero,
+									  Character genero,
 									  int peso,
 									  float estatura){}
 	public static void main(String[] args) {
@@ -66,58 +66,58 @@ public class Taller2Pre {
 
 		InformacionPersonal[] Data = new InformacionPersonal[10];
 
-		Data[0] = new InformacionPersonal("Juan","Pérez",LocalDate.parse("15/03/1985", DateTimeFormatter.ofPattern("yyyy-MM-dd")),"Calle 123Medellin","Licenciatura en Ingeniería","Ingeniero de Software",'M',70,1.75F);
-		Data[1] = new InformacionPersonal("María","García",LocalDate.parse("28/07/1992", DateTimeFormatter.ofPattern("yyyy-MM-dd")),"Calle 123,Medellin","Maestría en Psicología","Psicóloga Clínica",'F',58,1.68F);
-		Data[2] = new InformacionPersonal("Carlos","Pérez Garcia",LocalDate.parse("10/03/2023", DateTimeFormatter.ofPattern("yyyy-MM-dd")),"Calle 123,Medellin","","",'M',3,0.80F);
-		Data[3] = new InformacionPersonal("Ana","Martínez",LocalDate.parse("05/09/2009", DateTimeFormatter.ofPattern("yyyy-MM-dd")),"Calle 14,Villa","Bachiller","Estudiante",'F',55,1.60F);
-		Data[4] = new InformacionPersonal("Luisa","Hernández",LocalDate.parse("20/06/1989", DateTimeFormatter.ofPattern("yyyy-MM-dd")),"Carrera 789,Envigado","Doctorado en Economía","Profesora Universitaria",'F',63,1.70F);
-		Data[5] = new InformacionPersonal("Javier","López",LocalDate.parse("12/04/1975", DateTimeFormatter.ofPattern("yyyy-MM-dd")),"Calle San Juan,Medellin","Licenciatura en Arquitectura","Arquitecto Independiente",'M',75,1.82F);
-		Data[6] = new InformacionPersonal("Laura","Ramírez",LocalDate.parse("18/04/1998", DateTimeFormatter.ofPattern("yyyy-MM-dd")),"Avenida 6,Ciudad Metropolitana","Bachiller","Estudiante",'F',52,1.65F);
-		Data[7] = new InformacionPersonal("Martín","Torres",LocalDate.parse("30/02/1998", DateTimeFormatter.ofPattern("yyyy-MM-dd")),"Avenida 6,Aldea","Bachiller","Estudiante",'M',68,1.78F);
-		Data[8] = new InformacionPersonal("Sofia","Vargas",LocalDate.parse("22/07/1995", DateTimeFormatter.ofPattern("yyyy-MM-dd")),"Avenida 6,Rionegro","Bachiller","Estudiante",'F',60,1.63F);
-		Data[9] = new InformacionPersonal("Daniel","Sánchez",LocalDate.parse("08/12/1999", DateTimeFormatter.ofPattern("yyyy-MM-dd")),"Avenida 6,Rionegro","Bachiller","Estudiante",'M',72,1.79F);
+		Data[0] = new InformacionPersonal("Juan","Pérez",LocalDate.parse("15/03/1985", DateTimeFormatter.ofPattern("dd/MM/uuuu")),"Calle 123Medellin","Licenciatura en Ingeniería","Ingeniero de Software",'M',70,1.75F);
+		Data[1] = new InformacionPersonal("María","García",LocalDate.parse("28/07/1992", DateTimeFormatter.ofPattern("dd/MM/uuuu")),"Calle 123,Medellin","Maestría en Psicología","Psicóloga Clínica",'F',58,1.68F);
+		Data[2] = new InformacionPersonal("Carlos","Pérez Garcia",LocalDate.parse("10/03/2023", DateTimeFormatter.ofPattern("dd/MM/uuuu")),"Calle 123,Medellin","","",'M',3,0.80F);
+		Data[3] = new InformacionPersonal("Ana","Martínez",LocalDate.parse("05/09/2009", DateTimeFormatter.ofPattern("dd/MM/uuuu")),"Calle 14,Villa","Bachiller","Estudiante",'F',55,1.60F);
+		Data[4] = new InformacionPersonal("Luisa","Hernández",LocalDate.parse("20/06/1989", DateTimeFormatter.ofPattern("dd/MM/uuuu")),"Carrera 789,Envigado","Doctorado en Economía","Profesora Universitaria",'F',63,1.70F);
+		Data[5] = new InformacionPersonal("Javier","López",LocalDate.parse("12/04/1975", DateTimeFormatter.ofPattern("dd/MM/uuuu")),"Calle San Juan,Medellin","Licenciatura en Arquitectura","Arquitecto Independiente",'M',75,1.82F);
+		Data[6] = new InformacionPersonal("Laura","Ramírez",LocalDate.parse("18/04/1998", DateTimeFormatter.ofPattern("dd/MM/uuuu")),"Avenida 6,Ciudad Metropolitana","Bachiller","Estudiante",'F',52,1.65F);
+		Data[7] = new InformacionPersonal("Martín","Torres",LocalDate.parse("28/02/1998", DateTimeFormatter.ofPattern("dd/MM/uuuu")),"Avenida 6,Aldea","Bachiller","Estudiante",'M',68,1.78F);
+		Data[8] = new InformacionPersonal("Sofia","Vargas",LocalDate.parse("22/07/1995", DateTimeFormatter.ofPattern("dd/MM/uuuu")),"Avenida 6,Rionegro","Bachiller","Estudiante",'F',60,1.63F);
+		Data[9] = new InformacionPersonal("Daniel","Sánchez",LocalDate.parse("08/12/1999", DateTimeFormatter.ofPattern("dd/MM/uuuu")),"Avenida 6,Rionegro","Bachiller","Estudiante",'M',72,1.79F);
 
 
 
-		int[] pesos = getPesos(data);
+
 		int pesoPromed =0;
 		System.out.println("Los pesos son:");
 		System.out.println("");
-		for(int peso:pesos){
-			pesoPromed += peso;
-			System.out.println(peso);
+		for(InformacionPersonal info:Data){
+			pesoPromed += info.peso;
+			System.out.println(info.peso);
 			System.out.println("");
 		}
-		System.out.println("El promedio de pesos es:" + pesoPromed/pesos.length);
+		System.out.println("El promedio de pesos es:" + pesoPromed/Data.length);
 
 		System.out.println("");
 
 
-		Float[] Estaturas = getEstaturas(data);
+
 		System.out.println("Las Estaturas son:");
 		System.out.println("");
 		Float minEstatura=100F;
 		Float maxestatura = 0F;
-		for(Float Estatura: Estaturas){
-			System.out.println(Estatura);
+		for(InformacionPersonal info: Data){
+			System.out.println(info.estatura);
 			System.out.println("");
-			if(Estatura< minEstatura){
-				minEstatura = Estatura;
+			if(info.estatura< minEstatura){
+				minEstatura = info.estatura;
 			}
-			if(Estatura > maxestatura){
-				maxestatura = Estatura;
+			if(info.estatura > maxestatura){
+				maxestatura = info.estatura;
 			}
 
 		}
 		System.out.println("");
 		System.out.println("La mayor altura es: " + maxestatura + " y la menor estatura es: "+ minEstatura);
 
-		Character[] generos = getGeneros(data);
+
 		int masculino=0;
 		int  femenino=0;
 		System.out.println("");
-		for(Character genero:generos){
-			if(genero == 'M'){
+		for(InformacionPersonal info:Data){
+			if(info.genero == 'M'){
 				masculino++;
 
 			}else {
@@ -129,10 +129,10 @@ public class Taller2Pre {
 		System.out.println("El total de personas de genero femenino es: "+femenino);
 		System.out.println("");
 
-		String[]nombreCompleto = getNombresCompletos(data);
+
 		StringBuilder cadenaNombres = new StringBuilder();
-		for (String nombre: nombreCompleto){
-			cadenaNombres.append(nombre);
+		for (InformacionPersonal info:Data){
+			cadenaNombres.append(info.nombre);
 			cadenaNombres.append(",");
 			cadenaNombres.append(" ");
 
@@ -141,9 +141,9 @@ public class Taller2Pre {
 		System.out.println(cadenaNombres);
 		System.out.println("");
 		long edadmin = 1000L;
-		LocalDate[] fechaNacimiento = getFechasDeNacimientos(data);
-		for (LocalDate fecha:fechaNacimiento){
-			long edad = ChronoUnit.YEARS.between(fecha,LocalDate.now());
+
+		for (InformacionPersonal info:Data){
+			long edad = ChronoUnit.YEARS.between(info.fechaDeNacimiento,LocalDate.now());
 			System.out.println(edad);
 			System.out.println("");
 			if(edad<edadmin){
