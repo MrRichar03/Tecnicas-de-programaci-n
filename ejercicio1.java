@@ -16,11 +16,11 @@ public class Main {
       System.out.println("");
       System.out.println("Ahora pasaremos de Fahrenheit a celsius ");
       System.out.println("");
-      System.out.println(" 32F a celsius es : " + ((32-32)5/9));
+      System.out.println(" 32F a celsius es : " + ((32-32)*5/9));
       System.out.println("");
-      System.out.println(" 100F a celsius es : " + ((100-32)5/9));
+      System.out.println(" 100F a celsius es : " + ((100-32)*5/9));
       System.out.println("");
-      System.out.println(" -40F a celsius es : " + ((-40-32)5/9));
+      System.out.println(" -40F a celsius es : " + ((-40-32)*5/9));
 
   }
 }
